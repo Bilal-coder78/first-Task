@@ -89,3 +89,27 @@
   justify-content: center;
   gap: 25px;
 }
+
+@media (max-width:750px) {
+    #service{
+        height: auto;
+    }
+    .box1{
+        flex-direction: column;
+        height: auto;
+    }
+    .box2{
+        flex-direction: column;
+        height: auto;
+    }
+    .box3{
+        flex-direction: column;
+        height: auto;
+    }
+    .first-box{
+        width: 90%;
+    }
+    .second-box{
+        width: 90%;
+    }
+}
