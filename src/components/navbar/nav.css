@@ -289,7 +289,6 @@ em{
 
 .active{
     color: rgb(255, 81, 26);
-    border-bottom: 1px solid rgb(255, 81, 26);
 }
 
 @media (max-width: 750px) {
