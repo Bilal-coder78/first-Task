@@ -3,6 +3,7 @@ import { FaAngleDown } from "react-icons/fa6";
 import prev from "../../assets/prev.png"
 import next from "../../assets/next.png"
 import "./nav.css"
+import { Link } from 'react-scroll';
 
 function Nav({image}) {
   let menu = useRef()
@@ -17,20 +18,20 @@ function Nav({image}) {
             <div className="ham1">Our Services</div>
             <div className="ham1">Contact us</div>
           </div> : null}
-          <div className="leftnav">
-            <img src={image} className='logo' alt='' />
+          <div className="leftnav" >
+            <Link to='home'  smooth={true} duration={500}><img src={image} className='logo' alt='' /></Link>
           </div>
           <div className="rightnav">
             <ul className='list-items'>
-              <li>Home</li>
-              <li>Services</li>
-              <li>About</li>
-              <li className='item' onClick={() => {
+              <Link to="home" activeClass='active' spy={true} smooth={true} duration={500}><li>Home</li></Link>
+              <Link to="service" activeClass='active' spy={true} smooth={true} duration={500}><li>Services</li></Link>
+              <Link to="about" activeClass='active' spy={true} smooth={true} duration={500}><li>About</li></Link>
+              <Link to="pages" activeClass='active' spy={true} smooth={true} duration={500}><li className='item' onClick={() => {
                 setvisible(prev => !prev)
-              }}>Pages<FaAngleDown /></li>
-              <li>Testimonial</li>
+              }}>Pages<FaAngleDown /></li></Link>
+              <Link to="testi" activeClass='active' spy={true} smooth={true} duration={500}><li>Testimonial</li></Link>
             </ul>
-            <button className='btn-nav'>Contact Support</button>
+            <Link to='contact' activeClass='active' spy={true} smooth={true} duration={500}><button className='btn-nav'>Contact Support</button></Link>
           </div>
           <div className="hamburger" ref={menu} onClick={()=>{
             mobile.current.classList.toggle("active-mobile")
@@ -42,21 +43,21 @@ function Nav({image}) {
           </div>
            <div className="mobile" ref={mobile}>
             <ul className='mobile-list-items'>
-              <li>Home</li>
-              <li>Services</li>
-              <li>About</li>
-              <li className='item' onClick={() => {
+              <Link to="home" activeClass='active' spy={true} smooth={true} duration={500}><li>Home</li></Link>
+              <Link to="service" activeClass='active' spy={true} smooth={true} duration={500}><li>Services</li></Link>
+              <Link to="about" activeClass='active' spy={true} smooth={true} duration={500}><li>About</li></Link>
+              <Link to="pages" activeClass='active' spy={true} smooth={true} duration={500}><li className='item' onClick={() => {
                 setvisible(prev => !prev)
-              }}>Pages<FaAngleDown /></li>
-              <li>Testimonial</li>
-            <button className='mobile-btn-nav'>Contact Support</button>
+              }}>Pages<FaAngleDown /></li></Link>
+              <Link to="testi" activeClass='active' spy={true} smooth={true} duration={500}><li>Testimonial</li></Link>
+            <Link to='contact' activeClass='active' spy={true} smooth={true} duration={500}><button className='mobile-btn-nav'>Contact Support</button></Link>
             </ul>
           </div>
         </nav>
           <img src={prev} alt='' className='prev' />
           <img src={next} alt='' className='next' />
         
-        <div className="header-text">
+        <div id='home' className="header-text">
           <h2 className='header-h2'>Get
             <em> ready</em><br />
             for your business
